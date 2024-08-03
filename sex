@@ -1,17 +1,4 @@
-
-
-
-
-if game.PlaceId == 2788229376 then
-    getgenv().adverting = false
-    local vu = game:GetService("VirtualUser")
-    game:GetService("Players").LocalPlayer.Idled:connect(function()
-        vu:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
-        wait(1)
-        vu:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
-    end)
-
-    getgenv().isDropping = false
+getgenv().isDropping = false
     local speed = 50
     local c
     local h
@@ -941,7 +928,17 @@ if game.PlaceId == 2788229376 then
 
                         end
                         if finalMsg == getgenv().prefix .. "kill" then
-                            humanoid.Health = 0
+                            local plr = game:GetService("Players").LocalPlayer
+	local Humanoid = plr.Character.Humanoid:Clone()
+    Target = getgenv().user
+	local Tool = plr.Backpack:FindFirstChildOfClass("Tool")
+
+	plr.Character.Animate.Disabled = true
+	plr.Character.Humanoid:Destroy()
+	Humanoid.Parent = plr.Character
+	Tool.Parent = plr.Character
+    game.Players.LocalPlayer.Character.Humanoid:ChangeState(15)
+	firetouchinterest(Target.Character.HumanoidRootPart, Tool.Handle, 0);
                         end
 
                         if finalMsg == getgenv().prefix .. "crash" then
@@ -964,7 +961,17 @@ if game.PlaceId == 2788229376 then
                         end
 
                         if finalMsg == getgenv().prefix .. "kill " .. plr.Name:lower() then
-                            humanoid.Health = 0
+local plr = game:GetService("Players").LocalPlayer
+	local Humanoid = plr.Character.Humanoid:Clone()
+    Target = getgenv().user
+	local Tool = plr.Backpack:FindFirstChildOfClass("Tool")
+
+	plr.Character.Animate.Disabled = true
+	plr.Character.Humanoid:Destroy()
+	Humanoid.Parent = plr.Character
+	Tool.Parent = plr.Character
+    game.Players.LocalPlayer.Character.Humanoid:ChangeState(15)
+	firetouchinterest(Target.Character.HumanoidRootPart, Tool.Handle, 0);
                         end
 
                         if finalMsg == getgenv().prefix .. "kick" then
@@ -1148,7 +1155,7 @@ if game.PlaceId == 2788229376 then
         Home.Name = "Home"
         Home.Parent = Sidebar
         Home.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Home.BackgroundTransparency = 1
+        Home.BackgroundTransparency = 1.000
         Home.Position = UDim2.new(0.230769232, 0, 0.041420117, 0)
         Home.Size = UDim2.new(0, 35, 0, 35)
         Home.Image = "rbxassetid://9264541932"
@@ -1156,7 +1163,7 @@ if game.PlaceId == 2788229376 then
         Settings.Name = "Settings"
         Settings.Parent = Sidebar
         Settings.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Settings.BackgroundTransparency = 1
+        Settings.BackgroundTransparency = 1.000
         Settings.Position = UDim2.new(0.230769232, 0, 0.855029583, 0)
         Settings.Size = UDim2.new(0, 35, 0, 35)
         Settings.Image = "rbxassetid://9264554833"
@@ -1164,7 +1171,7 @@ if game.PlaceId == 2788229376 then
         Info.Name = "Info"
         Info.Parent = Sidebar
         Info.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Info.BackgroundTransparency = 1
+        Info.BackgroundTransparency = 1.000
         Info.Position = UDim2.new(0.230769232, 0, 0.70710057, 0)
         Info.Size = UDim2.new(0, 35, 0, 35)
         Info.Image = "rbxassetid://9264635930"
@@ -1172,7 +1179,7 @@ if game.PlaceId == 2788229376 then
         Teleports.Name = "Teleports"
         Teleports.Parent = Sidebar
         Teleports.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Teleports.BackgroundTransparency = 1
+        Teleports.BackgroundTransparency = 1.000
         Teleports.Position = UDim2.new(0.230769232, 0, 0.195266277, 0)
         Teleports.Size = UDim2.new(0, 35, 0, 35)
         Teleports.Image = "rbxassetid://9264768136"
@@ -1180,7 +1187,7 @@ if game.PlaceId == 2788229376 then
         Cmds.Name = "Cmds"
         Cmds.Parent = Sidebar
         Cmds.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Cmds.BackgroundTransparency = 1
+        Cmds.BackgroundTransparency = 1.000
         Cmds.Position = UDim2.new(0.230769232, 0, 0.352071017, 0)
         Cmds.Size = UDim2.new(0, 35, 0, 35)
         Cmds.Image = "rbxassetid://9264822672"
@@ -1188,7 +1195,7 @@ if game.PlaceId == 2788229376 then
         Search.Name = "Search"
         Search.Parent = Sidebar
         Search.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Search.BackgroundTransparency = 1
+        Search.BackgroundTransparency = 1.000
         Search.Position = UDim2.new(0.230769232, 0, 0.497041434, 0)
         Search.Size = UDim2.new(0, 35, 0, 35)
         Search.Image = "rbxassetid://9288309850"
@@ -1199,69 +1206,69 @@ if game.PlaceId == 2788229376 then
         Sites.Name = "Sites"
         Sites.Parent = Main
         Sites.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Sites.BackgroundTransparency = 1
+        Sites.BackgroundTransparency = 1.000
         Sites.Position = UDim2.new(0.107260726, 0, 0, 0)
         Sites.Size = UDim2.new(0, 541, 0, 338)
 
         Home_2.Name = "Home"
         Home_2.Parent = Sites
         Home_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Home_2.BackgroundTransparency = 1
+        Home_2.BackgroundTransparency = 1.000
         Home_2.Size = UDim2.new(0, 541, 0, 338)
 
         Username.Name = "Username"
         Username.Parent = Home_2
         Username.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Username.BackgroundTransparency = 1
+        Username.BackgroundTransparency = 1.000
         Username.BorderSizePixel = 0
         Username.Position = UDim2.new(0.0177452099, 0, 0.15242745, 0)
         Username.Size = UDim2.new(0, 335, 0, 21)
         Username.Font = Enum.Font.Code
         Username.Text = "Username: USER_HOLDER"
         Username.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Username.TextSize = 18
+        Username.TextSize = 18.000
         Username.TextWrapped = true
         Username.TextXAlignment = Enum.TextXAlignment.Left
 
         Rank.Name = "Rank"
         Rank.Parent = Home_2
         Rank.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Rank.BackgroundTransparency = 1
+        Rank.BackgroundTransparency = 1.000
         Rank.BorderSizePixel = 0
         Rank.Position = UDim2.new(0.0177452099, 0, 0.214557633, 0)
         Rank.Size = UDim2.new(0, 335, 0, 21)
         Rank.Font = Enum.Font.Code
         Rank.Text = " "
         Rank.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Rank.TextSize = 18
+        Rank.TextSize = 18.000
         Rank.TextWrapped = true
         Rank.TextXAlignment = Enum.TextXAlignment.Left
 
         WhatsNew.Name = "Whats New?"
         WhatsNew.Parent = Home_2
         WhatsNew.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        WhatsNew.BackgroundTransparency = 1
+        WhatsNew.BackgroundTransparency = 1.000
         WhatsNew.BorderSizePixel = 0
         WhatsNew.Position = UDim2.new(0.0177452099, 0, 0.374320924, 0)
         WhatsNew.Size = UDim2.new(0, 335, 0, 28)
         WhatsNew.Font = Enum.Font.Code
         WhatsNew.Text = "What's new?"
         WhatsNew.TextColor3 = Color3.fromRGB(220, 220, 220)
-        WhatsNew.TextSize = 26
+        WhatsNew.TextSize = 26.000
         WhatsNew.TextWrapped = true
         WhatsNew.TextXAlignment = Enum.TextXAlignment.Left
 
         watext.Name = "watext"
         watext.Parent = Home_2
         watext.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        watext.BackgroundTransparency = 1
+        watext.BackgroundTransparency = 1.000
         watext.BorderSizePixel = 0
         watext.Position = UDim2.new(0.0177452099, 0, 0.457161278, 0)
         watext.Size = UDim2.new(0, 515, 0, 169)
         watext.Font = Enum.Font.Code
         watext.Text = "Loading..."
         watext.TextColor3 = Color3.fromRGB(220, 220, 220)
-        watext.TextSize = 18
+        watext.TextSize = 18.000
         watext.TextWrapped = true
         watext.TextXAlignment = Enum.TextXAlignment.Left
         watext.TextYAlignment = Enum.TextYAlignment.Top
@@ -1269,7 +1276,7 @@ if game.PlaceId == 2788229376 then
         Teleports_2.Name = "Teleports"
         Teleports_2.Parent = Sites
         Teleports_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Teleports_2.BackgroundTransparency = 1
+        Teleports_2.BackgroundTransparency = 1.000
         Teleports_2.Size = UDim2.new(0, 541, 0, 338)
         Teleports_2.Visible = false
 
@@ -1280,7 +1287,7 @@ if game.PlaceId == 2788229376 then
         TextButton.Font = Enum.Font.Code
         TextButton.Text = "Bank"
         TextButton.TextColor3 = Color3.fromRGB(220, 220, 220)
-        TextButton.TextSize = 14
+        TextButton.TextSize = 14.000
 
         UICorner_3.Parent = TextButton
 
@@ -1291,7 +1298,7 @@ if game.PlaceId == 2788229376 then
         TextButton_2.Font = Enum.Font.Code
         TextButton_2.Text = "Playground"
         TextButton_2.TextColor3 = Color3.fromRGB(220, 220, 220)
-        TextButton_2.TextSize = 14
+        TextButton_2.TextSize = 14.000
 
         UICorner_4.Parent = TextButton_2
 
@@ -1302,7 +1309,7 @@ if game.PlaceId == 2788229376 then
         TextButton_3.Font = Enum.Font.Code
         TextButton_3.Text = "Train"
         TextButton_3.TextColor3 = Color3.fromRGB(220, 220, 220)
-        TextButton_3.TextSize = 14
+        TextButton_3.TextSize = 14.000
 
         UICorner_5.Parent = TextButton_3
 
@@ -1313,7 +1320,7 @@ if game.PlaceId == 2788229376 then
         TextButton_4.Font = Enum.Font.Code
         TextButton_4.Text = "Basket"
         TextButton_4.TextColor3 = Color3.fromRGB(220, 220, 220)
-        TextButton_4.TextSize = 14
+        TextButton_4.TextSize = 14.000
 
         UICorner_6.Parent = TextButton_4
 
@@ -1324,7 +1331,7 @@ if game.PlaceId == 2788229376 then
         TextButton_5.Font = Enum.Font.Code
         TextButton_5.Text = "School"
         TextButton_5.TextColor3 = Color3.fromRGB(220, 220, 220)
-        TextButton_5.TextSize = 14
+        TextButton_5.TextSize = 14.000
 
         UICorner_7.Parent = TextButton_5
 
@@ -1335,7 +1342,7 @@ if game.PlaceId == 2788229376 then
         TextButton_6.Font = Enum.Font.Code
         TextButton_6.Text = "Club"
         TextButton_6.TextColor3 = Color3.fromRGB(220, 220, 220)
-        TextButton_6.TextSize = 14
+        TextButton_6.TextSize = 14.000
 
         UICorner_8.Parent = TextButton_6
 
@@ -1346,7 +1353,7 @@ if game.PlaceId == 2788229376 then
         TextButton_7.Font = Enum.Font.Code
         TextButton_7.Text = "Safezone"
         TextButton_7.TextColor3 = Color3.fromRGB(220, 220, 220)
-        TextButton_7.TextSize = 14
+        TextButton_7.TextSize = 14.000
 
         UICorner_9.Parent = TextButton_7
 
@@ -1357,7 +1364,7 @@ if game.PlaceId == 2788229376 then
         TextButton_8.Font = Enum.Font.Code
         TextButton_8.Text = "Ufo"
         TextButton_8.TextColor3 = Color3.fromRGB(220, 220, 220)
-        TextButton_8.TextSize = 14
+        TextButton_8.TextSize = 14.000
 
         UICorner_10.Parent = TextButton_8
 
@@ -1368,7 +1375,7 @@ if game.PlaceId == 2788229376 then
         TextButton_9.Font = Enum.Font.Code
         TextButton_9.Text = "Police"
         TextButton_9.TextColor3 = Color3.fromRGB(220, 220, 220)
-        TextButton_9.TextSize = 14
+        TextButton_9.TextSize = 14.000
 
         UICorner_11.Parent = TextButton_9
 
@@ -1379,7 +1386,7 @@ if game.PlaceId == 2788229376 then
         TextButton_10.Font = Enum.Font.Code
         TextButton_10.Text = "Shop2"
         TextButton_10.TextColor3 = Color3.fromRGB(220, 220, 220)
-        TextButton_10.TextSize = 14
+        TextButton_10.TextSize = 14.000
 
         UICorner_12.Parent = TextButton_10
 
@@ -1390,7 +1397,7 @@ if game.PlaceId == 2788229376 then
         TextButton_11.Font = Enum.Font.Code
         TextButton_11.Text = "Shop1"
         TextButton_11.TextColor3 = Color3.fromRGB(220, 220, 220)
-        TextButton_11.TextSize = 14
+        TextButton_11.TextSize = 14.000
 
         UICorner_13.Parent = TextButton_11
 
@@ -1401,280 +1408,280 @@ if game.PlaceId == 2788229376 then
         TextButton_12.Font = Enum.Font.Code
         TextButton_12.Text = "Admin"
         TextButton_12.TextColor3 = Color3.fromRGB(220, 220, 220)
-        TextButton_12.TextSize = 14
+        TextButton_12.TextSize = 14.000
 
         UICorner_14.Parent = TextButton_12
 
         Title.Name = "Title"
         Title.Parent = Teleports_2
         Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Title.BackgroundTransparency = 1
+        Title.BackgroundTransparency = 1.000
         Title.BorderSizePixel = 0
         Title.Position = UDim2.new(0.0183918625, 0, 0.109467454, 0)
         Title.Size = UDim2.new(0, 153, 0, 21)
         Title.Font = Enum.Font.Code
         Title.Text = "Teleports"
         Title.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Title.TextSize = 20
+        Title.TextSize = 20.000
         Title.TextWrapped = true
         Title.TextXAlignment = Enum.TextXAlignment.Left
 
         Cmds_2.Name = "Cmds"
         Cmds_2.Parent = Sites
         Cmds_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Cmds_2.BackgroundTransparency = 1
+        Cmds_2.BackgroundTransparency = 1.000
         Cmds_2.Size = UDim2.new(0, 541, 0, 338)
         Cmds_2.Visible = false
 
         Username_2.Name = "Username"
         Username_2.Parent = Cmds_2
         Username_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Username_2.BackgroundTransparency = 1
+        Username_2.BackgroundTransparency = 1.000
         Username_2.BorderSizePixel = 0
         Username_2.Position = UDim2.new(0.0177452099, 0, 0.15242745, 0)
         Username_2.Size = UDim2.new(0, 335, 0, 21)
         Username_2.Font = Enum.Font.Code
         Username_2.Text = "Commands"
         Username_2.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Username_2.TextSize = 18
+        Username_2.TextSize = 18.000
         Username_2.TextWrapped = true
         Username_2.TextXAlignment = Enum.TextXAlignment.Left
 
         Rank_2.Name = "Rank"
         Rank_2.Parent = Cmds_2
         Rank_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Rank_2.BackgroundTransparency = 1
+        Rank_2.BackgroundTransparency = 1.000
         Rank_2.BorderSizePixel = 0
         Rank_2.Position = UDim2.new(0.0177452099, 0, 0.241184741, 0)
         Rank_2.Size = UDim2.new(0, 390, 0, 21)
         Rank_2.Font = Enum.Font.Code
         Rank_2.Text = "setup {bank, admin}"
         Rank_2.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Rank_2.TextSize = 18
+        Rank_2.TextSize = 18.000
         Rank_2.TextWrapped = true
         Rank_2.TextXAlignment = Enum.TextXAlignment.Left
 
         Rank_3.Name = "Rank"
         Rank_3.Parent = Cmds_2
         Rank_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Rank_3.BackgroundTransparency = 1
+        Rank_3.BackgroundTransparency = 1.000
         Rank_3.BorderSizePixel = 0
         Rank_3.Position = UDim2.new(0.0177452099, 0, 0.303314924, 0)
         Rank_3.Size = UDim2.new(0, 390, 0, 21)
         Rank_3.Font = Enum.Font.Code
         Rank_3.Text = "airlock {alt name, none=all}"
         Rank_3.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Rank_3.TextSize = 18
+        Rank_3.TextSize = 18.000
         Rank_3.TextWrapped = true
         Rank_3.TextXAlignment = Enum.TextXAlignment.Left
 
         Rank_4.Name = "Rank"
         Rank_4.Parent = Cmds_2
         Rank_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Rank_4.BackgroundTransparency = 1
+        Rank_4.BackgroundTransparency = 1.000
         Rank_4.BorderSizePixel = 0
         Rank_4.Position = UDim2.new(0.0177452099, 0, 0.365445107, 0)
         Rank_4.Size = UDim2.new(0, 390, 0, 21)
         Rank_4.Font = Enum.Font.Code
         Rank_4.Text = "money? {alt name, none=all}"
         Rank_4.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Rank_4.TextSize = 18
+        Rank_4.TextSize = 18.000
         Rank_4.TextWrapped = true
         Rank_4.TextXAlignment = Enum.TextXAlignment.Left
 
         Rank_5.Name = "Rank"
         Rank_5.Parent = Cmds_2
         Rank_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Rank_5.BackgroundTransparency = 1
+        Rank_5.BackgroundTransparency = 1.000
         Rank_5.BorderSizePixel = 0
         Rank_5.Position = UDim2.new(0.0177452099, 0, 0.42757529, 0)
         Rank_5.Size = UDim2.new(0, 390, 0, 21)
         Rank_5.Font = Enum.Font.Code
         Rank_5.Text = "drop {alt name, none=all}"
         Rank_5.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Rank_5.TextSize = 18
+        Rank_5.TextSize = 18.000
         Rank_5.TextWrapped = true
         Rank_5.TextXAlignment = Enum.TextXAlignment.Left
 
         Rank_6.Name = "Rank"
         Rank_6.Parent = Cmds_2
         Rank_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Rank_6.BackgroundTransparency = 1
+        Rank_6.BackgroundTransparency = 1.000
         Rank_6.BorderSizePixel = 0
         Rank_6.Position = UDim2.new(0.0177452099, 0, 0.489705473, 0)
         Rank_6.Size = UDim2.new(0, 390, 0, 21)
         Rank_6.Font = Enum.Font.Code
         Rank_6.Text = "setspot {alt name, none=all}"
         Rank_6.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Rank_6.TextSize = 18
+        Rank_6.TextSize = 18.000
         Rank_6.TextWrapped = true
         Rank_6.TextXAlignment = Enum.TextXAlignment.Left
 
         Rank_7.Name = "Rank"
         Rank_7.Parent = Cmds_2
         Rank_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Rank_7.BackgroundTransparency = 1
+        Rank_7.BackgroundTransparency = 1.000
         Rank_7.BorderSizePixel = 0
         Rank_7.Position = UDim2.new(0.0177452099, 0, 0.551835656, 0)
         Rank_7.Size = UDim2.new(0, 390, 0, 21)
         Rank_7.Font = Enum.Font.Code
         Rank_7.Text = "tospot {alt name, none=all}"
         Rank_7.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Rank_7.TextSize = 18
+        Rank_7.TextSize = 18.000
         Rank_7.TextWrapped = true
         Rank_7.TextXAlignment = Enum.TextXAlignment.Left
 
         Rank_8.Name = "Rank"
         Rank_8.Parent = Cmds_2
         Rank_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Rank_8.BackgroundTransparency = 1
+        Rank_8.BackgroundTransparency = 1.000
         Rank_8.BorderSizePixel = 0
         Rank_8.Position = UDim2.new(0.0177452099, 0, 0.613965809, 0)
         Rank_8.Size = UDim2.new(0, 390, 0, 21)
         Rank_8.Font = Enum.Font.Code
         Rank_8.Text = "bringalts"
         Rank_8.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Rank_8.TextSize = 18
+        Rank_8.TextSize = 18.000
         Rank_8.TextWrapped = true
         Rank_8.TextXAlignment = Enum.TextXAlignment.Left
 
         Rank_9.Name = "Rank"
         Rank_9.Parent = Cmds_2
         Rank_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Rank_9.BackgroundTransparency = 1
+        Rank_9.BackgroundTransparency = 1.000
         Rank_9.BorderSizePixel = 0
         Rank_9.Position = UDim2.new(0.0177452099, 0, 0.738226175, 0)
         Rank_9.Size = UDim2.new(0, 390, 0, 21)
         Rank_9.Font = Enum.Font.Code
         Rank_9.Text = "kill {alt name, none=all}"
         Rank_9.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Rank_9.TextSize = 18
+        Rank_9.TextSize = 18.000
         Rank_9.TextWrapped = true
         Rank_9.TextXAlignment = Enum.TextXAlignment.Left
 
         Rank_10.Name = "Rank"
         Rank_10.Parent = Cmds_2
         Rank_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Rank_10.BackgroundTransparency = 1
+        Rank_10.BackgroundTransparency = 1.000
         Rank_10.BorderSizePixel = 0
         Rank_10.Position = UDim2.new(0.0177452099, 0, 0.676096022, 0)
         Rank_10.Size = UDim2.new(0, 390, 0, 21)
         Rank_10.Font = Enum.Font.Code
         Rank_10.Text = "bring {alt name}"
         Rank_10.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Rank_10.TextSize = 18
+        Rank_10.TextSize = 18.000
         Rank_10.TextWrapped = true
         Rank_10.TextXAlignment = Enum.TextXAlignment.Left
 
         Rank_11.Name = "Rank"
         Rank_11.Parent = Cmds_2
         Rank_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Rank_11.BackgroundTransparency = 1
+        Rank_11.BackgroundTransparency = 1.000
         Rank_11.BorderSizePixel = 0
         Rank_11.Position = UDim2.new(0.0177452099, 0, 0.800356328, 0)
         Rank_11.Size = UDim2.new(0, 390, 0, 21)
         Rank_11.Font = Enum.Font.Code
         Rank_11.Text = "kick {alt name, none=all}"
         Rank_11.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Rank_11.TextSize = 18
+        Rank_11.TextSize = 18.000
         Rank_11.TextWrapped = true
         Rank_11.TextXAlignment = Enum.TextXAlignment.Left
 
         Rank_12.Name = "Rank"
         Rank_12.Parent = Cmds_2
         Rank_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Rank_12.BackgroundTransparency = 1
+        Rank_12.BackgroundTransparency = 1.000
         Rank_12.BorderSizePixel = 0
         Rank_12.Position = UDim2.new(0.0177452099, 0, 0.859527946, 0)
         Rank_12.Size = UDim2.new(0, 390, 0, 21)
         Rank_12.Font = Enum.Font.Code
         Rank_12.Text = "freeze {alt name, none=all}"
         Rank_12.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Rank_12.TextSize = 18
+        Rank_12.TextSize = 18.000
         Rank_12.TextWrapped = true
         Rank_12.TextXAlignment = Enum.TextXAlignment.Left
 
         Rank_13.Name = "Rank"
         Rank_13.Parent = Cmds_2
         Rank_13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Rank_13.BackgroundTransparency = 1
+        Rank_13.BackgroundTransparency = 1.000
         Rank_13.BorderSizePixel = 0
         Rank_13.Position = UDim2.new(0.0177452099, 0, 0.918699563, 0)
         Rank_13.Size = UDim2.new(0, 390, 0, 21)
         Rank_13.Font = Enum.Font.Code
         Rank_13.Text = "unfreeze {alt name, none=all}"
         Rank_13.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Rank_13.TextSize = 18
+        Rank_13.TextSize = 18.000
         Rank_13.TextWrapped = true
         Rank_13.TextXAlignment = Enum.TextXAlignment.Left
 
         Rank_14.Name = "Rank"
         Rank_14.Parent = Cmds_2
         Rank_14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Rank_14.BackgroundTransparency = 1
+        Rank_14.BackgroundTransparency = 1.000
         Rank_14.BorderSizePixel = 0
         Rank_14.Position = UDim2.new(0.511275709, 0, 0.241184801, 0)
         Rank_14.Size = UDim2.new(0, 390, 0, 21)
         Rank_14.Font = Enum.Font.Code
         Rank_14.Text = "vibe {alt name, none=all}"
         Rank_14.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Rank_14.TextSize = 18
+        Rank_14.TextSize = 18.000
         Rank_14.TextWrapped = true
         Rank_14.TextXAlignment = Enum.TextXAlignment.Left
 
         Rank_15.Name = "Rank"
         Rank_15.Parent = Cmds_2
         Rank_15.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Rank_15.BackgroundTransparency = 1
+        Rank_15.BackgroundTransparency = 1.000
         Rank_15.BorderSizePixel = 0
         Rank_15.Position = UDim2.new(0.511275709, 0, 0.303314984, 0)
         Rank_15.Size = UDim2.new(0, 390, 0, 21)
         Rank_15.Font = Enum.Font.Code
         Rank_15.Text = "advert {alt name, none=all}"
         Rank_15.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Rank_15.TextSize = 18
+        Rank_15.TextSize = 18.000
         Rank_15.TextWrapped = true
         Rank_15.TextXAlignment = Enum.TextXAlignment.Left
 
         Rank_16.Name = "Rank"
         Rank_16.Parent = Cmds_2
         Rank_16.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Rank_16.BackgroundTransparency = 1
+        Rank_16.BackgroundTransparency = 1.000
         Rank_16.BorderSizePixel = 0
         Rank_16.Position = UDim2.new(0.511275709, 0, 0.365445167, 0)
         Rank_16.Size = UDim2.new(0, 390, 0, 21)
         Rank_16.Font = Enum.Font.Code
         Rank_16.Text = "crash (REQUIRES A DECENT PC)"
         Rank_16.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Rank_16.TextSize = 18
+        Rank_16.TextSize = 18.000
         Rank_16.TextWrapped = true
         Rank_16.TextXAlignment = Enum.TextXAlignment.Left
 
         Info_2.Name = "Info"
         Info_2.Parent = Sites
         Info_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Info_2.BackgroundTransparency = 1
+        Info_2.BackgroundTransparency = 1.000
         Info_2.Size = UDim2.new(0, 541, 0, 338)
         Info_2.Visible = false
 
         Username_3.Name = "Username"
         Username_3.Parent = Info_2
         Username_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Username_3.BackgroundTransparency = 1
+        Username_3.BackgroundTransparency = 1.000
         Username_3.BorderSizePixel = 0
         Username_3.Position = UDim2.new(0.0177452099, 0, 0.15242745, 0)
         Username_3.Size = UDim2.new(0, 335, 0, 21)
         Username_3.Font = Enum.Font.Code
         Username_3.Text = "Info"
         Username_3.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Username_3.TextSize = 18
+        Username_3.TextSize = 18.000
         Username_3.TextWrapped = true
         Username_3.TextXAlignment = Enum.TextXAlignment.Left
 
         Rank_17.Name = "Rank"
         Rank_17.Parent = Info_2
         Rank_17.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Rank_17.BackgroundTransparency = 1
+        Rank_17.BackgroundTransparency = 1.000
         Rank_17.BorderSizePixel = 0
         Rank_17.Position = UDim2.new(0.0177452099, 0, 0.288522124, 0)
         Rank_17.Size = UDim2.new(0, 513, 0, 226)
@@ -1682,7 +1689,7 @@ if game.PlaceId == 2788229376 then
         Rank_17.Text =
             "This script has been made by the incognito and lil_Squeasy."
         Rank_17.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Rank_17.TextSize = 18
+        Rank_17.TextSize = 18.000
         Rank_17.TextWrapped = true
         Rank_17.TextXAlignment = Enum.TextXAlignment.Left
         Rank_17.TextYAlignment = Enum.TextYAlignment.Top
@@ -1690,55 +1697,55 @@ if game.PlaceId == 2788229376 then
         Settings_2.Name = "Settings"
         Settings_2.Parent = Sites
         Settings_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Settings_2.BackgroundTransparency = 1
+        Settings_2.BackgroundTransparency = 1.000
         Settings_2.Size = UDim2.new(0, 541, 0, 338)
         Settings_2.Visible = false
 
         Username_4.Name = "Username"
         Username_4.Parent = Settings_2
         Username_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Username_4.BackgroundTransparency = 1
+        Username_4.BackgroundTransparency = 1.000
         Username_4.BorderSizePixel = 0
         Username_4.Position = UDim2.new(0.0177452099, 0, 0.15242745, 0)
         Username_4.Size = UDim2.new(0, 335, 0, 21)
         Username_4.Font = Enum.Font.Code
         Username_4.Text = "Settings"
         Username_4.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Username_4.TextSize = 18
+        Username_4.TextSize = 18.000
         Username_4.TextWrapped = true
         Username_4.TextXAlignment = Enum.TextXAlignment.Left
 
         Rank_18.Name = "Rank"
         Rank_18.Parent = Settings_2
         Rank_18.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Rank_18.BackgroundTransparency = 1
+        Rank_18.BackgroundTransparency = 1.000
         Rank_18.BorderSizePixel = 0
         Rank_18.Position = UDim2.new(0.133086875, 0, 0.362486631, 0)
         Rank_18.Size = UDim2.new(0, 391, 0, 92)
         Rank_18.Font = Enum.Font.Code
         Rank_18.Text = "THIS FEATURE IS COMING SOON!"
         Rank_18.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Rank_18.TextSize = 18
+        Rank_18.TextSize = 18.000
         Rank_18.TextWrapped = true
 
         Search_2.Name = "Search"
         Search_2.Parent = Sites
         Search_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Search_2.BackgroundTransparency = 1
+        Search_2.BackgroundTransparency = 1.000
         Search_2.Size = UDim2.new(0, 541, 0, 338)
         Search_2.Visible = false
 
         Title_2.Name = "Title"
         Title_2.Parent = Search_2
         Title_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Title_2.BackgroundTransparency = 1
+        Title_2.BackgroundTransparency = 1.000
         Title_2.BorderSizePixel = 0
         Title_2.Position = UDim2.new(0.0177452099, 0, 0.15242745, 0)
         Title_2.Size = UDim2.new(0, 335, 0, 21)
         Title_2.Font = Enum.Font.Code
         Title_2.Text = "Search accounts"
         Title_2.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Title_2.TextSize = 18
+        Title_2.TextSize = 18.000
         Title_2.TextWrapped = true
         Title_2.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -1748,11 +1755,11 @@ if game.PlaceId == 2788229376 then
         TextBox.Size = UDim2.new(0, 268, 0, 37)
         TextBox.ZIndex = 5
         TextBox.Font = Enum.Font.Code
-        TextBox.LineHeight = 1.1
+        TextBox.LineHeight = 1.100
         TextBox.PlaceholderText = "Input Username (cAsE sEnsItive)"
         TextBox.Text = ""
         TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-        TextBox.TextSize = 14
+        TextBox.TextSize = 14.000
 
         UICorner_15.Parent = TextBox
 
@@ -1764,42 +1771,42 @@ if game.PlaceId == 2788229376 then
         searchBTN.Font = Enum.Font.Code
         searchBTN.Text = "Search"
         searchBTN.TextColor3 = Color3.fromRGB(230, 230, 230)
-        searchBTN.TextSize = 14
+        searchBTN.TextSize = 14.000
 
         UICorner_16.Parent = searchBTN
 
         username.Name = "username"
         username.Parent = Search_2
         username.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        username.BackgroundTransparency = 1
+        username.BackgroundTransparency = 1.000
         username.BorderSizePixel = 0
         username.Position = UDim2.new(0.0177452099, 0, 0.264853477, 0)
         username.Size = UDim2.new(0, 335, 0, 21)
         username.Font = Enum.Font.Code
         username.Text = "Username: HOLDER"
         username.TextColor3 = Color3.fromRGB(220, 220, 220)
-        username.TextSize = 18
+        username.TextSize = 18.000
         username.TextWrapped = true
         username.TextXAlignment = Enum.TextXAlignment.Left
 
         cash.Name = "cash"
         cash.Parent = Search_2
         cash.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        cash.BackgroundTransparency = 1
+        cash.BackgroundTransparency = 1.000
         cash.BorderSizePixel = 0
         cash.Position = UDim2.new(0.0177452099, 0, 0.338817954, 0)
         cash.Size = UDim2.new(0, 335, 0, 21)
         cash.Font = Enum.Font.Code
         cash.Text = "Money: HOLDER"
         cash.TextColor3 = Color3.fromRGB(220, 220, 220)
-        cash.TextSize = 18
+        cash.TextSize = 18.000
         cash.TextWrapped = true
         cash.TextXAlignment = Enum.TextXAlignment.Left
 
         UserIMG.Name = "UserIMG"
         UserIMG.Parent = Search_2
         UserIMG.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        UserIMG.BackgroundTransparency = 1
+        UserIMG.BackgroundTransparency = 1.000
         UserIMG.Position = UDim2.new(0.780036926, 0, 0.177514777, 0)
         UserIMG.Size = UDim2.new(0, 100, 0, 100)
         UserIMG.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
@@ -1810,28 +1817,28 @@ if game.PlaceId == 2788229376 then
         wanted.Name = "wanted"
         wanted.Parent = Search_2
         wanted.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        wanted.BackgroundTransparency = 1
+        wanted.BackgroundTransparency = 1.000
         wanted.BorderSizePixel = 0
         wanted.Position = UDim2.new(0.0177452099, 0, 0.41278249, 0)
         wanted.Size = UDim2.new(0, 335, 0, 21)
         wanted.Font = Enum.Font.Code
         wanted.Text = "Wanted: HOLDER"
         wanted.TextColor3 = Color3.fromRGB(220, 220, 220)
-        wanted.TextSize = 18
+        wanted.TextSize = 18.000
         wanted.TextWrapped = true
         wanted.TextXAlignment = Enum.TextXAlignment.Left
 
         Title_3.Name = "Title"
         Title_3.Parent = Main
         Title_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Title_3.BackgroundTransparency = 1
+        Title_3.BackgroundTransparency = 1.000
         Title_3.BorderSizePixel = 0
         Title_3.Position = UDim2.new(0.123752303, 0, 0.0177514795, 0)
         Title_3.Size = UDim2.new(0, 153, 0, 21)
         Title_3.Font = Enum.Font.Code
         Title_3.Text = "Bedrock's Controll v1"
         Title_3.TextColor3 = Color3.fromRGB(220, 220, 220)
-        Title_3.TextSize = 14
+        Title_3.TextSize = 14.000
         Title_3.TextWrapped = true
         Title_3.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -2221,7 +2228,7 @@ if game.PlaceId == 2788229376 then
             workspace:FindFirstChildOfClass('Terrain').WaterReflectance = 0
             workspace:FindFirstChildOfClass('Terrain').WaterTransparency = 0
             game:GetService("Lighting").GlobalShadows = false
-            game:GetService("Lighting").FogEnd = 9000000000
+            game:GetService("Lighting").FogEnd = 9e9
             settings().Rendering.QualityLevel = 1
             for i, v in pairs(game:GetDescendants()) do
                 if v:IsA("Part") or v:IsA("UnionOperation") or v:IsA("MeshPart") or v:IsA("CornerWedgePart") or
@@ -2280,7 +2287,7 @@ if game.PlaceId == 2788229376 then
             t.WaterReflectance = 0
             t.WaterTransparency = 0
             l.GlobalShadows = false
-            l.FogEnd = 9000000000
+            l.FogEnd = 9e9
             l.Brightness = 0
             settings().Rendering.QualityLevel = "Level01"
             for i, v in pairs(g:GetDescendants()) do
@@ -2299,7 +2306,7 @@ if game.PlaceId == 2788229376 then
                 elseif v:IsA("MeshPart") then
                     v.Material = "Plastic"
                     v.Reflectance = 0
-                    v.TextureID = 10385902758728956
+                    v.TextureID = 10385902758728957
                 end
             end
             for i, e in pairs(l:GetChildren()) do
@@ -2319,7 +2326,7 @@ if game.PlaceId == 2788229376 then
             t.WaterReflectance = 0
             t.WaterTransparency = 0
             l.GlobalShadows = false
-            l.FogEnd = 9000000000
+            l.FogEnd = 9e9
             l.Brightness = 0
             settings().Rendering.QualityLevel = "Level01"
             for i, v in pairs(g:GetDescendants()) do
@@ -2338,7 +2345,7 @@ if game.PlaceId == 2788229376 then
                 elseif v:IsA("MeshPart") then
                     v.Material = "Plastic"
                     v.Reflectance = 0
-                    v.TextureID = 10385902758728956
+                    v.TextureID = 10385902758728957
                 end
             end
             for i, e in pairs(l:GetChildren()) do
@@ -2360,8 +2367,6 @@ if game.PlaceId == 2788229376 then
             -- Version: 3.2
             game:GetService("RunService"):Set3dRenderingEnabled(false)
             -- Instances:
-
-            local PSiwshuwDUItgsuiz = Instance.new("ScreenGui")
             local Frame = Instance.new("Frame")
             local TextLabel = Instance.new("TextLabel")
             local TextButton = Instance.new("TextButton")
@@ -2375,20 +2380,9 @@ if game.PlaceId == 2788229376 then
             local TextLabel_4 = Instance.new("TextLabel")
 
             -- Properties:
-
-            PSiwshuwDUItgsuiz.Name = RandomVariable(20)
-            PSiwshuwDUItgsuiz.Parent = game.CoreGui
-            PSiwshuwDUItgsuiz.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-            PSiwshuwDUItgsuiz.IgnoreGuiInset = true
-            Frame.Parent = PSiwshuwDUItgsuiz
-            Frame.AnchorPoint = Vector2.new(0.5, 0.5)
-            Frame.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
-            Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
-            Frame.Size = UDim2.new(1, 0, 1, 36)
-
             TextLabel.Parent = Frame
             TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            TextLabel.BackgroundTransparency = 1
+            TextLabel.BackgroundTransparency = 1.000
             TextLabel.BorderSizePixel = 0
             TextLabel.Position = UDim2.new(0.379002213, 0, 0.0237247907, 0)
             TextLabel.Size = UDim2.new(0, 325, 0, 54)
@@ -2396,7 +2390,7 @@ if game.PlaceId == 2788229376 then
             TextLabel.Text = "Bedrock's Controll v1"
             TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
             TextLabel.TextScaled = true
-            TextLabel.TextSize = 14
+            TextLabel.TextSize = 14.000
             TextLabel.TextWrapped = true
 
             TextButton.Parent = Frame
@@ -2407,7 +2401,7 @@ if game.PlaceId == 2788229376 then
             TextButton.Text = " Copy Discord "
             TextButton.TextColor3 = Color3.fromRGB(220, 220, 220)
             TextButton.TextScaled = true
-            TextButton.TextSize = 14
+            TextButton.TextSize = 14.000
             TextButton.TextWrapped = true
 
             UICorner.Parent = TextButton
@@ -2420,7 +2414,7 @@ if game.PlaceId == 2788229376 then
             TextButton_2.Text = "  Copy Group  "
             TextButton_2.TextColor3 = Color3.fromRGB(220, 220, 220)
             TextButton_2.TextScaled = true
-            TextButton_2.TextSize = 14
+            TextButton_2.TextSize = 14.000
             TextButton_2.TextWrapped = true
 
             UICorner_2.Parent = TextButton_2
@@ -2433,14 +2427,14 @@ if game.PlaceId == 2788229376 then
             TextButton_3.Text = "  Leave Game  "
             TextButton_3.TextColor3 = Color3.fromRGB(220, 220, 220)
             TextButton_3.TextScaled = true
-            TextButton_3.TextSize = 14
+            TextButton_3.TextSize = 14.000
             TextButton_3.TextWrapped = true
 
             UICorner_3.Parent = TextButton_3
 
             TextLabel_2.Parent = Frame
             TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            TextLabel_2.BackgroundTransparency = 1
+            TextLabel_2.BackgroundTransparency = 1.000
             TextLabel_2.BorderSizePixel = 0
             TextLabel_2.Position = UDim2.new(0.378997803, 0, 0.869513631, 0)
             TextLabel_2.Size = UDim2.new(0, 325, 0, 54)
@@ -2448,32 +2442,32 @@ if game.PlaceId == 2788229376 then
             TextLabel_2.Text = "Version 1"
             TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
             TextLabel_2.TextScaled = true
-            TextLabel_2.TextSize = 14
+            TextLabel_2.TextSize = 14.000
             TextLabel_2.TextWrapped = true
 
             TextLabel_3.Parent = Frame
             TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            TextLabel_3.BackgroundTransparency = 1
+            TextLabel_3.BackgroundTransparency = 1.000
             TextLabel_3.BorderSizePixel = 0
             TextLabel_3.Position = UDim2.new(0.161833152, 0, 0.290628701, 0)
             TextLabel_3.Size = UDim2.new(0, 907, 0, 54)
             TextLabel_3.Font = Enum.Font.Code
             TextLabel_3.Text = "Name: HOLDERRR"
             TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-            TextLabel_3.TextSize = 49
+            TextLabel_3.TextSize = 49.000
             TextLabel_3.TextWrapped = true
             TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
 
             TextLabel_4.Parent = Frame
             TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            TextLabel_4.BackgroundTransparency = 1
+            TextLabel_4.BackgroundTransparency = 1.000
             TextLabel_4.BorderSizePixel = 0
             TextLabel_4.Position = UDim2.new(0.161833152, 0, 0.371293008, 0)
             TextLabel_4.Size = UDim2.new(0, 907, 0, 54)
             TextLabel_4.Font = Enum.Font.Code
             TextLabel_4.Text = "Money: HOLDER"
             TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
-            TextLabel_4.TextSize = 49
+            TextLabel_4.TextSize = 49.000
             TextLabel_4.TextWrapped = true
             TextLabel_4.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -2556,17 +2550,5 @@ if game.PlaceId == 2788229376 then
             end
             coroutine.wrap(WDTSQEC_fake_script)()
 
-            local RunService = game:GetService("RunService")
-            local MaxFPS = getgenv().altFPS
-            while true do
-                local t0 = tick()
-                RunService.Heartbeat:Wait()
-                repeat
-                until (t0 + 1 / MaxFPS) < tick()
-            end
-        end
-    end
-
-else
-    game.Players.LocalPlayer:Kick("Only da hood.")
+end
 end
