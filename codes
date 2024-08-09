@@ -9,6 +9,8 @@ local Codes = {
     "PENGUIN",
     "METAL",
     "RACE",
+    "CAT",
+    "UNICORN"
 }
 
 local A = os.clock()
